@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8080E084-0EAE-44BB-8D14-BA4A18D957A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNetFrameworkExtendClass</RootNamespace>
+    <AssemblyName>DotNetFrameworkExtendClass</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\调试\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DocumentationFile>..\..\调试\DotNetFrameworkExtendClass.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\编译\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>..\..\编译\DotNetFrameworkExtendClass.XML</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\ConfigContext.cs" />
+    <Compile Include="Helper\EmailHelper.cs" />
+    <Compile Include="Helper\GenerationBitmapVerificationCode.cs" />
+    <Compile Include="Helper\Messaging\IExecuteWithObject.cs" />
+    <Compile Include="Helper\Messaging\IMessenger.cs" />
+    <Compile Include="Helper\Messaging\Messenger.cs" />
+    <Compile Include="Helper\Messaging\WeakAction.cs" />
+    <Compile Include="Helper\Messaging\WeakActionGeneric.cs" />
+    <Compile Include="Helper\Windows\ApplicationProcess.cs" />
+    <Compile Include="Helper\Windows\FileHelper.cs" />
+    <Compile Include="Helper\Windows\PerformanceObservation.cs" />
+    <Compile Include="Helper\WinRAR.cs" />
+    <Compile Include="Helper\IConfigurationManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemEx\ByteX.cs" />
+    <Compile Include="SystemEx\ClassX.cs" />
+    <Compile Include="SystemEx\Collections\ObjectModel\ObservableCollectionT.cs" />
+    <Compile Include="SystemEx\Linq\EnumerableX.cs" />
+    <Compile Include="SystemEx\Data\SqlClient\SqlCommandX.cs" />
+    <Compile Include="SystemEx\Data\SqlClient\SqlConnectionX.cs" />
+    <Compile Include="SystemEx\Data\SqlClient\SqlDataReaderX.cs" />
+    <Compile Include="SystemEx\DatetimeX.cs" />
+    <Compile Include="SystemEx\Linq\QueryableX.cs" />
+    <Compile Include="SystemEx\Net\NetworkInformation\PingX.cs" />
+    <Compile Include="SystemEx\RandomX.cs" />
+    <Compile Include="Helper\Singleton.cs" />
+    <Compile Include="SystemEx\StringX.cs" />
+    <Compile Include="Helper\Windows\ScheduledTasks.cs" />
+    <Compile Include="SystemEx\Xml\XmlDocumentX.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SystemEx\Core\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

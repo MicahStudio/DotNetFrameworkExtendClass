@@ -1,0 +1,647 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNetFrameworkExtendClass</name>
+    </assembly>
+    <members>
+        <member name="T:DotNetFrameworkExtendClass.ExeConfigContext">
+            <summary>
+            [单例模式]读写exe.Config文件
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ExeConfigContext.SetConnectionString(System.String,System.String)">
+            <summary>
+            设置ConnectionString，并保存
+            </summary>
+            <param name="name">节点名</param>
+            <param name="connectionString">值</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ExeConfigContext.GetConnectionString(System.String)">
+            <summary>
+            获取ConnectionString
+            </summary>
+            <param name="name">节点名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ExeConfigContext.SetValue``1(System.String,``0)">
+            <summary>
+            写入配置文件并保存
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name">节点名</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ExeConfigContext.GetValue(System.String)">
+            <summary>
+            从节点读取值
+            </summary>
+            <param name="name">节点名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ExeConfigContext.GetValue``1(System.String)">
+            <summary>
+            从节点读取值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name">节点名</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.EmailHelper">
+            <summary>
+            邮件发送辅助类
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.EmailHelper.ForNetease(System.String,System.String,System.String,System.String,System.String,System.String,System.Net.Mail.MailPriority)">
+            <summary>
+            使用163邮箱发送邮件
+            </summary>
+            <param name="Form">发件箱的地址</param>
+            <param name="UserID">发件箱的用户名</param>
+            <param name="Password">发件箱的密码</param>
+            <param name="To">发到哪个地址</param>
+            <param name="Title">邮件标题</param>
+            <param name="Content">邮件正文</param>
+            <param name="Priority">优先级</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.EmailHelper.ForCustom(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Net.Mail.MailPriority)">
+            <summary>
+            使用自定义的邮箱发送邮件
+            </summary>
+            <param name="Form">发件箱的地址</param>
+            <param name="Smtp">发件箱的Smtp地址</param>
+            <param name="SmtpPort">发件箱的Smtp端口号</param>
+            <param name="UserID">发件箱的用户名</param>
+            <param name="Password">发件箱的密码</param>
+            <param name="To">发到哪个地址</param>
+            <param name="Title">邮件标题</param>
+            <param name="Content">邮件正文</param>
+            <param name="Priority">优先级</param>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.GenerationBitmapVerificationCode">
+            <summary>
+            生成图片验证码
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.GenerationBitmapVerificationCode.SEED">
+            <summary>
+            种子
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.GenerationBitmapVerificationCode.Out(System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.Single,System.String,System.Int32)">
+            <summary>
+            输出验证码
+            </summary>
+            <param name="FontColor">字体颜色</param>
+            <param name="BackgroundColor">背景颜色</param>
+            <param name="Width">宽度</param>
+            <param name="Height">高度</param>
+            <param name="FontSize">字号</param>
+            <param name="Code">显示的字符串（默认随记）</param>
+            <param name="Length">显示的字符长度（默认4位）</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.ApplicationProcess">
+            <summary>
+            Windows进程辅助
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ApplicationProcess.ProcessNames">
+            <summary>
+            获取所有进程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ApplicationProcess.FindProcessExist(System.String)">
+            <summary>
+            查找进程是否已启动
+            </summary>
+            <param name="ProcessName">进程名</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.FileHelper">
+            <summary>
+            文件辅助方法
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.FileHelper.GetMD5Hash(System.String,System.String,System.Boolean)">
+            <summary>
+            获取文件的MD5
+            </summary>
+            <param name="FileName">文件路径</param>
+            <param name="Separator">MD5分隔符</param>
+            <param name="Upper">结果大写/小写</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.PerformanceObservation">
+            <summary>
+            性能观察
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.PerformanceObservation.TotalMemoryBegin">
+            <summary>
+            开始记录内存消耗
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.PerformanceObservation.TotalMemoryEnd">
+            <summary>
+            停止记录内存消耗量
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.PerformanceObservation.UseMemory">
+            <summary>
+            计算内存消耗量(Kb)
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.PerformanceObservation.BeginTime">
+            <summary>
+            计时开始
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.PerformanceObservation.EndTime">
+            <summary>
+            计时结束
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.PerformanceObservation.Useup">
+            <summary>
+            计算消耗时间（毫秒）
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.WinRAR">
+            <summary>
+            WinRAR操作
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.WinRAR.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.WinRAR.UnRar(System.String,System.String)">
+            <summary>
+            解压缩
+            </summary>
+            <param name="zipFilePath">压缩文件的路径</param>
+            <param name="UnZipPath">要解压的位置</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.IConfigurationManager">
+            <summary>
+            桌面程序操作app.config的辅助类
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.IConfigurationManager.IsSecret">
+            <summary>
+            是否对字段的值进行加密（默认为不加密）
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.IConfigurationManager.SecretKey">
+            <summary>
+            加＼解密的Key（需要将IsSecret设置为Ture才会生效）
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.IConfigurationManager.config">
+            <summary>
+            config文件
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.IConfigurationManager.UpdateOnInsert(DotNetFrameworkExtendClass.ConfigurationManagerSectionType,System.String,System.String)">
+            <summary>
+            更新或添加节点
+            </summary>
+            <param name="SectionType">节点类型</param>
+            <param name="Key">节点名</param>
+            <param name="Value">节点值</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.IConfigurationManager.GetValue(DotNetFrameworkExtendClass.ConfigurationManagerSectionType,System.String,System.String)">
+            <summary>
+            获取节点的值
+            </summary>
+            <param name="SectionType">节点类型</param>
+            <param name="Key">节点名</param>
+            <param name="defaultValue">如果没查找到节点那么返回给定的默认值</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.ConfigurationManagerSectionType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ConfigurationManagerSectionType.AppSettings">
+            <summary>
+            AppSettings
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ConfigurationManagerSectionType.ConnectionStrings">
+            <summary>
+            ConnectionStrings
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.ByteX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ByteX.Decrypt(System.Byte[],System.String,System.Boolean,System.Boolean)">
+            <summary>
+            通过密钥，对字符串形式的加密数据进行解密
+            </summary>
+            <param name="bytes"></param>
+            <param name="SecretKey">密钥</param>
+            <param name="SingleLine">True：解析单行；False：解析所有</param>
+            <param name="Standard">是否使用标准方式</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.ClassX">
+            <summary>
+            基类扩展
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ClassX.ComposePartsSelf``1(``0,System.String)">
+            <summary>
+            引入M插件（如果存在的话）
+            <para>插件方式是MEF项目的实现</para>
+            <para>由System.ComponentModel.Composition类库实现</para>
+            <para>如果您并未使用此功能请不要调用此方法</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="Path">插件路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.ObservableCollectionT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ObservableCollectionT.PageSize``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Int32)">
+            <summary>
+            取得分页的总页数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Source"></param>
+            <param name="Number">每页显示条数</param>
+            <returns>总页数</returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ObservableCollectionT.PageCollection``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Int32,System.Int32)">
+            <summary>
+            获取某页的数据
+            </summary>
+            <param name="source">数据源</param>
+            <param name="Number">每页显示的条数</param>
+            <param name="CurrentSize">页码</param>
+            <returns>数据集</returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.EnumerableX">
+            <summary>
+            提供一组用于查询实现 System.Collections.Generic.IEnumerable&lt;T&gt; 的对象的 static（在 Visual Basic 中为 Shared）方法。
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.SqlCommandX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlCommandX.AddParameters(System.Data.SqlClient.SqlCommand,System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            将指定的 System.Data.SqlClient.SqlParameter 对象添加到 System.Data.SqlClient.SqlParameterCollection 中。
+            </summary>
+            <param name="command"></param>
+            <param name="ParameterName">获取或设置 System.Data.SqlClient.SqlParameter 的名称。</param>
+            <param name="SqlDbType">获取或设置参数的 System.Data.SqlDbType。</param>
+            <param name="Value">获取或设置该参数的值。</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlCommandX.AddParameters(System.Data.SqlClient.SqlCommand,System.String,System.Object)">
+            <summary>
+            将指定的 System.Data.SqlClient.SqlParameter 对象添加到 System.Data.SqlClient.SqlParameterCollection 中。
+            </summary>
+            <param name="command"></param>
+            <param name="ParameterName">获取或设置 System.Data.SqlClient.SqlParameter 的名称。</param>
+            <param name="Value">获取或设置该参数的值。</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlCommandX.GenericList``1(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            生成实体类对象集合predicate
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlCommandX.GenericObject``1(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            生成实体类对象集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.SqlConnectionX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlConnectionX.Open(System.Data.SqlClient.SqlConnection,System.Double)">
+            <summary>
+            使用现成的方式执行Open操作
+            </summary>
+            <param name="conn"></param>
+            <param name="Timeout">设置超时的时间，单位为（秒），默认3秒，支持小数位的毫秒。</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlConnectionX.OpenDb(System.Data.SqlClient.SqlConnection,System.Double)">
+            <summary>
+            用线程的方式执行SqlConnection.Open()
+            </summary>
+            <param name="conn"></param>
+            <param name="Timeout">设置超时的时间，单位为（秒），默认3秒，支持小数位的毫秒。</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlConnectionX.CloseDb(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            如果数据库已经Open那么执行Close
+            </summary>
+            <param name="conn"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlConnectionX.CopyTable(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlConnection,System.String,System.String,System.Int32)">
+            <summary>
+            将源表中的数据复制到目标表中：SqlBulkCopy方式
+            </summary>
+            <param name="conn"></param>
+            <param name="Destination">目标数据库</param>
+            <param name="SourceTableName">源表表名</param>
+            <param name="DestinationTableName">目标表表名</param>
+            <param name="TOP">读取的条数</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlConnectionX.CopyTable(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlConnection,System.String,System.String,System.String)">
+            <summary>
+            将源表中的数据复制到目标表中：SqlBulkCopy方式
+            </summary>
+            <param name="conn"></param>
+            <param name="Destination">目标数据库</param>
+            <param name="SourceTableName">源表表名</param>
+            <param name="DestinationTableName">目标表表名</param>
+            <param name="SourceTableQueryCommand">源表数据的查询语句</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlConnectionX.Tables(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            返回所有表名的集合
+            </summary>
+            <returns>返回所有表名的集合</returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.SqlDataReaderX">
+            <summary>
+            提供一种从 SQL Server 数据库读取行的只进流的方式。 此类不能被继承。
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlDataReaderX.GetDouble(System.Data.SqlClient.SqlDataReader,System.String,System.Double)">
+            <summary>
+            获取指定列的双精度浮点数形式的值
+            </summary>
+            <param name="sdr"></param>
+            <param name="ColumnName">列名</param>
+            <param name="defaultValue">如果为空，返回的默认值</param>
+            <returns>经过处理后的值，如果Sql数据库中的值为Null，则返回默认值0</returns>
+            <exception cref="T:System.IndexOutOfRangeException"></exception>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlDataReaderX.GetInt(System.Data.SqlClient.SqlDataReader,System.String,System.Int32)">
+            <summary>
+            获取指定列的 32 位有符号整数形式的值
+            </summary>
+            <param name="sdr"></param>
+            <param name="ColumnName">列名</param>
+            <param name="defaultValue">如果为空，返回的默认值</param>
+            <returns>经过处理后的值，如果Sql数据库中的值为Null，则返回默认值0</returns>
+            <exception cref="T:System.IndexOutOfRangeException"></exception>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlDataReaderX.GetDateTime(System.Data.SqlClient.SqlDataReader,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            获取指定列的 System.Datetime 对象形式的值
+            </summary>
+            <param name="sdr"></param>
+            <param name="ColumnName">列名</param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+            <exception cref="T:System.IndexOutOfRangeException"></exception>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlDataReaderX.GetFloat(System.Data.SqlClient.SqlDataReader,System.String,System.Single)">
+            <summary>
+            获取指定列的单精度浮点形式的值
+            </summary>
+            <param name="sdr"></param>
+            <param name="ColumnName">列名</param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+            <exception cref="T:System.IndexOutOfRangeException"></exception>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlDataReaderX.GetString(System.Data.SqlClient.SqlDataReader,System.String,System.String)">
+            <summary>
+            获取指定列的字符串形式的值。
+            </summary>
+            <param name="sdr"></param>
+            <param name="ColumnName">列名</param>
+            <param name="defaultValue"></param>
+            <returns>指定列的值。</returns>
+            <exception cref="T:System.IndexOutOfRangeException"></exception>
+            <exception cref="T:System.InvalidCastException"></exception>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.SqlDataReaderX.Off(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            关闭 System.Data.SqlClient.SqlDataReader 对象。
+            </summary>
+            <param name="sdr"></param>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.DatetimeX">
+            <summary>
+            System.Datetime的扩展
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.WeekOfMonth(System.DateTime)">
+            <summary>
+            获取此实例所表示的日期为该月中的第几周。
+            </summary>
+            <param name="utc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.WeekOfYear(System.DateTime)">
+            <summary>
+            返回该日期属于一年中的第几周
+            </summary>
+            <param name="utc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.UnixTimestamp(System.DateTime)">
+            <summary>
+            返回Unix时间戳
+            </summary>
+            <param name="utc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.UnixTimestamp(System.DateTime,System.DateTime)">
+            <summary>
+            返回Unix时间戳
+            </summary>
+            <param name="utc"></param>
+            <param name="datetime">要进行计算的时间</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.SortDirection">
+            <summary>
+            排序方式
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.SortDirection.OrderBy">
+            <summary>
+            ASC方式
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.SortDirection.OrderByDescending">
+            <summary>
+            Descing方式
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.QueryableX">
+            <summary>
+            提供一组用于查询实现 System.Linq.IQueryable&lt;T&gt; 的数据结构的 static（在 Visual Basic 中为 Shared）方法。
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.QueryableX.Sorting``1(System.Linq.IQueryable{``0},System.String,DotNetFrameworkExtendClass.SortDirection)">
+            <summary>
+            根据键对序列的元素排序。
+            </summary>
+            <typeparam name="TSource">source 中的元素的类型。</typeparam>
+            <param name="source">一个要排序的值序列。</param>
+            <param name="OrderParameter">要进行排序的字段</param>
+            <param name="OrderDirection">排序方式</param>
+            <returns>一个 System.Linq.IQueryable&lt;TSource&gt;，将根据某个键按排序方式对其元素进行排序。</returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.PingX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.PingX.IsWork(System.Net.NetworkInformation.Ping,System.String,System.Int32)">
+            <summary>
+            与目标地址间的通信是否通畅
+            </summary>
+            <param name="pingSender"></param>
+            <param name="IPAddress">目标地址</param>
+            <param name="Timeout">超时时间（毫秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.PingX.Reply(System.Net.NetworkInformation.Ping,System.String,System.Int32)">
+            <summary>
+            目标连通性
+            </summary>
+            <param name="pingSender"></param>
+            <param name="IPAddress">目标地址</param>
+            <param name="Timeout">超时时间（毫秒）</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.RandomX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.RandomX.NextString(System.Random,System.Int32,System.Boolean)">
+            <summary>
+            生成随机的字符串
+            </summary>
+            <param name="ran"></param>
+            <param name="Length">要生成随机字符串的长度</param>
+            <param name="AllowedRepeat">是否允许出现重复的字符</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.Singleton`1">
+            <summary>
+            用反射模式实现单例模式的基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Singleton`1._instance">
+            <summary>
+            创建对象
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Singleton`1.Instance">
+            <summary>
+            获取对象
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.StringX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.StringX.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            指示指定的字符串是 null、空还是仅由空白字符组成。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.StringX.Append(System.String,System.String)">
+            <summary>
+            连接字符串
+            </summary>
+            <param name="str"></param>
+            <param name="text">要追加的字符串</param>
+            <returns>连接后的心字符串</returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.StringX.ToBytes(System.String)">
+             <summary>
+            转换为 ASCIIEncoding.ASCII的byte数组
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.StringX.ToMD5(System.String)">
+            <summary>
+            计算MD5值
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.StringX.Encrypt(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            通过密钥对文本进行加密
+            </summary>
+            <param name="str"></param>
+            <param name="SecretKey">密钥</param>
+            <param name="SingleLine">True：单行；False：所有</param>
+            <param name="Standard">是否使用标准方式</param>
+            <returns>加密后的文本</returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.StringX.Decrypt(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            通过密钥，对字符串形式的加密数据进行解密
+            </summary>
+            <param name="str"></param>
+            <param name="SecretKey">密钥</param>
+            <param name="SingleLine">True：解析单行；False：解析所有</param>
+            <param name="Standard">是否使用标准方式</param>
+            <returns>原始文本</returns>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.ScheduledTasks">
+            <summary>
+            Windows 计划任务
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ScheduledTasks.CreateTask(System.String,System.Int32,System.String)">
+            <summary>
+            创建一个计划任务（按分钟执行）
+            </summary>
+            <param name="TaskName">任务计划的名字</param>
+            <param name="Minute">间隔的分钟数</param>
+            <param name="FullPath">完整的要执行的应用的路径</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.ScheduledTasks.DeleteTask(System.String)">
+            <summary>
+            删除计划任务
+            </summary>
+            <param name="TaskName">要删除的任务的名字</param>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.XmlDocumentX">
+            <summary>
+            表示 XML 文档。
+            </summary>
+        </member>
+    </members>
+</doc>

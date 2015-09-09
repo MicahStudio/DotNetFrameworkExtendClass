@@ -1,0 +1,6 @@
+D:\DotNetFrameworkExtendClass\调试\DotNetFrameworkExtendClass.XML
+D:\DotNetFrameworkExtendClass\调试\DotNetFrameworkExtendClass.dll
+D:\DotNetFrameworkExtendClass\调试\DotNetFrameworkExtendClass.pdb
+D:\DotNetFrameworkExtendClass\源代码\DotNetFrameworkExtendClass\obj\Debug\DotNetFrameworkExtendClass.csprojResolveAssemblyReference.cache
+D:\DotNetFrameworkExtendClass\源代码\DotNetFrameworkExtendClass\obj\Debug\DotNetFrameworkExtendClass.dll
+D:\DotNetFrameworkExtendClass\源代码\DotNetFrameworkExtendClass\obj\Debug\DotNetFrameworkExtendClass.pdb
