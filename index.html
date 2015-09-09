@@ -25,9 +25,28 @@
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a id="systemstring" class="anchor" href="#systemstring" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.String</h3>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<ul>
+<li>bool IsNullOrWhiteSpace()</li>
+<li>string Append(string text)</li>
+<li>byte[] ToBytes()</li>
+<li>string ToMD5()</li>
+<li>string Encrypt(string SecretKey, bool SingleLine = true, bool Standard = false)</li>
+<li>string Decrypt(string SecretKey, bool SingleLine = true, bool Standard = false)</li>
+</ul>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    <span class="pl-k">string</span> simple = <span class="pl-s"><span class="pl-pds">"</span>Hello world.<span class="pl-pds">"</span></span>;
+    <span class="pl-k">if</span>(simple.IsNullOrWhiteSpace()){
+        Console.WriteLine(<span class="pl-s"><span class="pl-pds">"</span>空字符串。<span class="pl-pds">"</span></span>);
+    }
+    <span class="pl-k">string</span> newsimple = simple.Append(<span class="pl-s"><span class="pl-pds">"</span>Hello Github.<span class="pl-pds">"</span></span>);
+    <span class="pl-k">var</span> buffer = newsimple.ToBytes();
+    <span class="pl-k">string</span> md5string = newsimple.ToMD5();
+    <span class="pl-k">string</span> en = newsimple.Encrypt(<span class="pl-s"><span class="pl-pds">"</span>密钥<span class="pl-pds">"</span></span>);
+    <span class="pl-k">string</span> de = en.Decrypt(<span class="pl-s"><span class="pl-pds">"</span>密钥<span class="pl-pds">"</span></span>);</pre></div>
 
 <h3>
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating pages manually</h3>
