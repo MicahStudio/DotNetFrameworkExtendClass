@@ -1,0 +1,2 @@
+# DotNetFrameworkExtendClass
+DotNet的一些扩展方法和常用的封装
