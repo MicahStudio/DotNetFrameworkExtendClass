@@ -49,9 +49,134 @@
     <span class="pl-k">string</span> de = en.Decrypt(<span class="pl-s"><span class="pl-pds">"</span>密钥<span class="pl-pds">"</span></span>);</pre></div>
 
 <h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<a id="systemrandom" class="anchor" href="#systemrandom" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.Random</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<ul>
+<li>string NextString(int Length = 6, bool AllowedRepeat = true)</li>
+</ul>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    Random rand = <span class="pl-k">new</span> Random();
+    <span class="pl-k">string</span> randstring1 = rand.NextString();
+    <span class="pl-k">string</span> randstring2 = rand.NextString(<span class="pl-c1">10</span>);
+    <span class="pl-k">string</span> randstring3 = rand.NextString(<span class="pl-c1">10</span>,<span class="pl-c1">true</span>);</pre></div>
+
+<h3>
+<a id="systemdatetime" class="anchor" href="#systemdatetime" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.DateTime</h3>
+
+<ul>
+<li>int WeekOfYear()</li>
+<li>Int64 UnixTimestamp()</li>
+<li>Int64 UnixTimestamp(DateTime datetime)</li>
+</ul>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    DateTime datetime = DateTime.Now;
+    <span class="pl-k">int</span> woy = datetime.WeekOfYear();
+    <span class="pl-k">long</span> timestamp1 = datetime.UnixTimestamp();
+    <span class="pl-k">long</span> timestamp2 = datetime.UnixTimestamp(<span class="pl-k">new</span> DateTime(<span class="pl-c1">2046</span>,<span class="pl-c1">10</span>,<span class="pl-c1">1</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>));</pre></div>
+
+<h3>
+<a id="关于mef插件式的扩展" class="anchor" href="#%E5%85%B3%E4%BA%8Emef%E6%8F%92%E4%BB%B6%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>关于MEF插件式的扩展</h3>
+
+<p>此方法将载入插件的形式进行了封装，参数留空则插件目录默认为Lib，可以自己传入目录。</p>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MEFTest</span>{
+        <span class="pl-k">public</span> <span class="pl-en">MEFTest</span>(){
+                <span class="pl-c1">this</span>.ComposePartsSelf();
+                <span class="pl-c">//this.ComposePartsSelf("plugins");</span>
+        }
+    }</pre></div>
+
+<h3>
+<a id="systembyte" class="anchor" href="#systembyte" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.Byte</h3>
+
+<ul>
+<li>string Decrypt(string SecretKey, bool SingleLine = true, bool Standard = false)</li>
+</ul>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    <span class="pl-k">byte</span>[] bytes = getEncryptBytes();
+    <span class="pl-k">string</span> de = bytes.Decrypt(<span class="pl-s"><span class="pl-pds">"</span>密钥<span class="pl-pds">"</span></span>);</pre></div>
+
+<h3>
+<a id="systemnetnetworkinformationping" class="anchor" href="#systemnetnetworkinformationping" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.Net.NetworkInformation.Ping</h3>
+
+<ul>
+<li>bool IsWork(string IPAddress, int Timeout = 300)</li>
+<li>PingReply Reply(string IPAddress, int Timeout = 300)</li>
+</ul>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    Pint p = <span class="pl-k">new</span> Ping();
+    <span class="pl-k">bool</span> isWork = p.IsWork(<span class="pl-s"><span class="pl-pds">"</span>192.168.0.1<span class="pl-pds">"</span></span>);
+    PingReply pr = p.Reply(<span class="pl-s"><span class="pl-pds">"</span>192.168.0.1<span class="pl-pds">"</span></span>);</pre></div>
+
+<h3>
+<a id="systemlinqiqueryable" class="anchor" href="#systemlinqiqueryable" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.Linq.IQueryable</h3>
+
+<ul>
+<li>IQueryable Sorting(string OrderParameter, SortDirection OrderDirection)</li>
+</ul>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    <span class="pl-k">var</span> items = items.Sorting(<span class="pl-s"><span class="pl-pds">"</span>要排序的字段名<span class="pl-pds">"</span></span>,SortDirection.OrderByDescending);</pre></div>
+
+<h3>
+<a id="systemdatasqlclientsqlcommand" class="anchor" href="#systemdatasqlclientsqlcommand" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.Data.SqlClient.SqlCommand</h3>
+
+<ul>
+<li>void AddParameters(string ParameterName, System.Data.SqlDbType SqlDbType, object Value)</li>
+<li>void AddParameters(string ParameterName, object Value)</li>
+<li>ObservableCollection GenericList()</li>
+<li>T GenericObject()</li>
+</ul>
+
+<h3>
+<a id="systemcollectionsobjectmodelobservablecollection" class="anchor" href="#systemcollectionsobjectmodelobservablecollection" aria-hidden="true"><span class="octicon octicon-link"></span></a>System.Collections.ObjectModel.ObservableCollection</h3>
+
+<ul>
+<li>int PageSize(int Number)</li>
+<li>ObservableCollection PageCollection(int Number, int CurrentSize)</li>
+</ul>
+
+<h3>
+<a id="dotnetframeworkextendclasswinrar" class="anchor" href="#dotnetframeworkextendclasswinrar" aria-hidden="true"><span class="octicon octicon-link"></span></a>DotNetFrameworkExtendClass.WinRAR</h3>
+
+<p><strong><em>使用该类需要在客户端安装了WinRAR软件。</em></strong></p>
+
+<ul>
+<li>bool UnRar(string zipFilePath, string UnZipPath)</li>
+</ul>
+
+<p><strong>示例</strong></p>
+
+<div class="highlight highlight-csharp"><pre>    WinRAR rar = <span class="pl-k">new</span> WinRAR();
+    <span class="pl-k">bool</span> result = rar.UnRar(<span class="pl-s"><span class="pl-pds">@"C:\test.rar"</span></span>,<span class="pl-s"><span class="pl-pds">@"D:\unrar"</span></span>);    </pre></div>
+
+<h3>
+<a id="dotnetframeworkextendclasssingleton" class="anchor" href="#dotnetframeworkextendclasssingleton" aria-hidden="true"><span class="octicon octicon-link"></span></a>DotNetFrameworkExtendClass.Singleton</h3>
+
+<p><strong><em>用反射模式实现单例模式的基类</em></strong></p>
+
+<p><strong><em>示例</em></strong></p>
+
+<div class="highlight highlight-csharp"><pre>    <span class="pl-k">public</span> <span class="pl-k">sealed</span> <span class="pl-k">class</span> <span class="pl-en">TestApp</span> : <span class="pl-k">Singleton</span>&lt;<span class="pl-k">TestApp</span>&gt;{
+        <span class="pl-k">private</span> <span class="pl-en">TestApp</span>(){}
+        <span class="pl-c">//********//</span>
+    }
+    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Program</span>{
+        <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">Main</span>(){
+           TestApp ta = TestApp.Instance;
+        }
+    }</pre></div>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
