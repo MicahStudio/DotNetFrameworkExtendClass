@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace DotNetFrameworkExtendClass
 {
@@ -7,6 +8,7 @@ namespace DotNetFrameworkExtendClass
     /// </summary>
     public static class DatetimeX
     {
+        private static ChineseLunisolarCalendar chinese = new ChineseLunisolarCalendar();
         /// <summary>
         /// 获取此实例所表示的日期为该月中的第几周。
         /// </summary>
@@ -47,6 +49,15 @@ namespace DotNetFrameworkExtendClass
         {
             DateTime gw = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1, 0, 0, 0));
             return (Int64)(datetime - gw).TotalSeconds;
+        }
+        /// <summary>
+        /// 返回中国的农历日期
+        /// </summary>
+        /// <param name="utc"></param>
+        /// <returns></returns>
+        public static DateTime ToChineseCalendar(this DateTime utc)
+        {
+            return new DateTime(chinese.GetYear(utc), chinese.GetMonth(utc), chinese.GetDayOfMonth(utc));
         }
     }
 }

@@ -4,14 +4,26 @@ using System.Reflection;
 
 namespace DotNetFrameworkExtendClass.Messaging
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class WeakAction
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private Action _staticAction;
+        /// <summary>
+        /// 
+        /// </summary>
         protected MethodInfo Method
         {
             get;
             set;
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual string MethodName
         {
             get
@@ -23,18 +35,25 @@ namespace DotNetFrameworkExtendClass.Messaging
                 return Method.Name;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         protected WeakReference ActionReference
         {
             get;
             set;
         }
+        /// <summary>
+        /// 
+        /// </summary>
         protected WeakReference Reference
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public bool IsStatic
         {
             get
@@ -42,13 +61,24 @@ namespace DotNetFrameworkExtendClass.Messaging
                 return _staticAction != null;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         protected WeakAction()
         {
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action"></param>
         public WeakAction(Action action) : this(action == null ? null : action.Target, action)
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="action"></param>
         [SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "1", Justification = "Method should fail with an exception if action is null.")]
         public WeakAction(object target, Action action)
         {
@@ -65,6 +95,9 @@ namespace DotNetFrameworkExtendClass.Messaging
             ActionReference = new WeakReference(action.Target);
             Reference = new WeakReference(target);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual bool IsAlive
         {
             get
@@ -84,6 +117,9 @@ namespace DotNetFrameworkExtendClass.Messaging
                 return Reference.IsAlive;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public object Target
         {
             get
@@ -96,6 +132,9 @@ namespace DotNetFrameworkExtendClass.Messaging
                 return Reference.Target;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         protected object ActionTarget
         {
             get
@@ -107,6 +146,9 @@ namespace DotNetFrameworkExtendClass.Messaging
                 return ActionReference.Target;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void Execute()
         {
             if (_staticAction != null)
@@ -124,6 +166,9 @@ namespace DotNetFrameworkExtendClass.Messaging
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void MarkForDeletion()
         {
             Reference = null;
