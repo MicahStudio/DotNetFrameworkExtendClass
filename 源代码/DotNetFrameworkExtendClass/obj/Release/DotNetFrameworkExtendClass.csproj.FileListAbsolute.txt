@@ -1,0 +1,5 @@
+D:\DotNetFrameworkExtendClassGit\DotNetFrameworkExtendClass\编译\DotNetFrameworkExtendClass.XML
+D:\DotNetFrameworkExtendClassGit\DotNetFrameworkExtendClass\编译\DotNetFrameworkExtendClass.dll
+D:\DotNetFrameworkExtendClassGit\DotNetFrameworkExtendClass\编译\DotNetFrameworkExtendClass.pdb
+D:\DotNetFrameworkExtendClassGit\DotNetFrameworkExtendClass\源代码\DotNetFrameworkExtendClass\obj\Release\DotNetFrameworkExtendClass.dll
+D:\DotNetFrameworkExtendClassGit\DotNetFrameworkExtendClass\源代码\DotNetFrameworkExtendClass\obj\Release\DotNetFrameworkExtendClass.pdb

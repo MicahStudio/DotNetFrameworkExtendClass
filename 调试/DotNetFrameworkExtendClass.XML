@@ -100,6 +100,473 @@
             <param name="Length">显示的字符长度（默认4位）</param>
             <returns></returns>
         </member>
+        <member name="T:DotNetFrameworkExtendClass.Messaging.IExecuteWithObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.IExecuteWithObject.Target">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IExecuteWithObject.ExecuteWithObject(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IExecuteWithObject.MarkForDeletion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.Messaging.IMessenger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Register``1(System.Object,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Register``1(System.Object,System.Object,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="token"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Register``1(System.Object,System.Object,System.Boolean,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="token"></param>
+            <param name="receiveDerivedMessagesToo"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Register``1(System.Object,System.Boolean,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="receiveDerivedMessagesToo"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Send``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="message"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Send``2(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <typeparam name="TTarget"></typeparam>
+            <param name="message"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Send``1(``0,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="message"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Unregister(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="recipient"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Unregister``1(System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Unregister``1(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Unregister``1(System.Object,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.IMessenger.Unregister``1(System.Object,System.Object,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="token"></param>
+            <param name="action"></param>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.Messaging.Messenger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.Messenger.CreationLock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.Messenger._defaultInstance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.Messenger._registerLock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.Messenger._recipientsOfSubclassesAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.Messenger._recipientsStrictAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.Messenger.Default">
+            <summary>
+            默认实例
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Register``1(System.Object,System.Action{``0})">
+            <summary>
+            注册一个新的消息
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+            <param name="action">执行委托的方法</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Register``1(System.Object,System.Boolean,System.Action{``0})">
+            <summary>
+            注册一个新的消息
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+            <param name="receiveDerivedMessagesToo"></param>
+            <param name="action">执行委托的方法</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Register``1(System.Object,System.Object,System.Action{``0})">
+            <summary>
+            注册一个新的消息
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+            <param name="token">标识符</param>
+            <param name="action">执行委托的方法</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Register``1(System.Object,System.Object,System.Boolean,System.Action{``0})">
+            <summary>
+            订阅一个消息
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+            <param name="token">标识符</param>
+            <param name="receiveDerivedMessagesToo"></param>
+            <param name="action">执行委托的方法</param>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.Messenger._isCleanupRegistered">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Send``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="message"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Send``2(``0)">
+            <summary>
+            发送消息
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <typeparam name="TTarget"></typeparam>
+            <param name="message"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Send``1(``0,System.Object)">
+            <summary>
+            发送消息
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="message"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Unregister(System.Object)">
+            <summary>
+            取消订阅
+            </summary>
+            <param name="recipient">受体,一般都用this</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Unregister``1(System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Unregister``1(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Unregister``1(System.Object,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Unregister``1(System.Object,System.Object,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient">受体,一般都用this</param>
+            <param name="token"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.OverrideDefault(DotNetFrameworkExtendClass.Messaging.IMessenger)">
+            <summary>
+            
+            </summary>
+            <param name="newMessenger"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Reset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.ResetAll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.CleanupList(System.Collections.Generic.IDictionary{System.Type,System.Collections.Generic.List{DotNetFrameworkExtendClass.Messaging.Messenger.WeakActionAndToken}})">
+            <summary>
+            
+            </summary>
+            <param name="lists"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.SendToList``1(``0,System.Collections.Generic.IEnumerable{DotNetFrameworkExtendClass.Messaging.Messenger.WeakActionAndToken},System.Type,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="message"></param>
+            <param name="weakActionsAndTokens"></param>
+            <param name="messageTargetType"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.UnregisterFromLists(System.Object,System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.List{DotNetFrameworkExtendClass.Messaging.Messenger.WeakActionAndToken}})">
+            <summary>
+            
+            </summary>
+            <param name="recipient"></param>
+            <param name="lists"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.UnregisterFromLists``1(System.Object,System.Object,System.Action{``0},System.Collections.Generic.Dictionary{System.Type,System.Collections.Generic.List{DotNetFrameworkExtendClass.Messaging.Messenger.WeakActionAndToken}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="recipient"></param>
+            <param name="token"></param>
+            <param name="action"></param>
+            <param name="lists"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.RequestCleanup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.Cleanup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.Messenger.SendToTargetOrType``1(``0,System.Type,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+            <param name="message"></param>
+            <param name="messageTargetType"></param>
+            <param name="token"></param>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.Messaging.Messenger.WeakActionAndToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.Messaging.WeakAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.WeakAction._staticAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.Method">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.MethodName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.ActionReference">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.Reference">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.IsStatic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction.#ctor(System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction.#ctor(System.Object,System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="target"></param>
+            <param name="action"></param>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.IsAlive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.Target">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction.ActionTarget">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction.Execute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction.MarkForDeletion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.Messaging.WeakAction`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Messaging.WeakAction`1._staticAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction`1.MethodName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DotNetFrameworkExtendClass.Messaging.WeakAction`1.IsAlive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction`1.#ctor(System.Action{`0})">
+            <summary>
+            
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction`1.#ctor(System.Object,System.Action{`0})">
+            <summary>
+            
+            </summary>
+            <param name="target"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction`1.Execute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction`1.Execute(`0)">
+            <summary>
+            
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction`1.ExecuteWithObject(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.Messaging.WeakAction`1.MarkForDeletion">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:DotNetFrameworkExtendClass.ApplicationProcess">
             <summary>
             Windows进程辅助
@@ -448,6 +915,371 @@
             </summary>
             <param name="sdr"></param>
         </member>
+        <member name="T:DotNetFrameworkExtendClass.ChineseEra">
+            <summary>
+            甲子表
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.甲子">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.乙丑">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丙寅">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丁卯">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.戊辰">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.己巳">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.庚午">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.辛未">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.壬申">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.癸酉">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.甲戌">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.乙亥">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丙子">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丁丑">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.戊寅">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.己卯">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.庚辰">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.辛巳">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.壬午">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.癸未">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.甲申">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.乙酉">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丙戌">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丁亥">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.戊子">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.己丑">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.庚寅">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.辛卯">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.壬辰">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.癸巳">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.甲午">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.乙未">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丙申">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丁酉">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.戊戌">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.己亥">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.庚子">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.辛丑">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.壬寅">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.癸卯">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.甲辰">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.乙巳">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丙午">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丁未">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.戊申">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.己酉">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.庚戌">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.辛亥">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.壬子">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.癸丑">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.甲寅">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.乙卯">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丙辰">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.丁巳">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.戊午">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.己未">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.庚申">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.辛酉">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.壬戌">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.ChineseEra.癸亥">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DotNetFrameworkExtendClass.Earthly">
+            <summary>
+            地支表
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.丑">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.寅">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.卯">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.辰">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.巳">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.午">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.未">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.申">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.酉">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.戌">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DotNetFrameworkExtendClass.Earthly.亥">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:DotNetFrameworkExtendClass.DatetimeX">
             <summary>
             System.Datetime的扩展
@@ -480,6 +1312,46 @@
             </summary>
             <param name="utc"></param>
             <param name="datetime">要进行计算的时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.ToChineseCalendar(System.DateTime)">
+            <summary>
+            返回中国的农历日期
+            </summary>
+            <param name="utc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.GetSexagenaryYear(System.DateTime)">
+            <summary>
+            返回甲子（60年）循环中对应的甲子年int值
+            </summary>
+            <param name="utc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.GetSexagenaryYearString(System.DateTime)">
+            <summary>
+            返回甲子（60年）循环中对应的甲子年中文
+            </summary>
+            <param name="utc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.GetTerrestrialBranch(System.DateTime)">
+            <summary>
+            返回甲子（60年）循环中对应的地址Int值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.GetTerrestrialBranchString(System.DateTime)">
+            <summary>
+            返回甲子（60年）循环中对应的地址Int值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetFrameworkExtendClass.DatetimeX.GetDaysInYear(System.DateTime)">
+            <summary>
+            返回年份中有多少天
+            </summary>
+            <param name="utc"></param>
             <returns></returns>
         </member>
         <member name="T:DotNetFrameworkExtendClass.SortDirection">
