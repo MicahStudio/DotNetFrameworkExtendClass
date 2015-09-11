@@ -69,6 +69,12 @@
 <li>int WeekOfYear()</li>
 <li>Int64 UnixTimestamp()</li>
 <li>Int64 UnixTimestamp(DateTime datetime)</li>
+<li>DateTime ToChineseCalendar()</li>
+<li>int GetSexagenaryYear()</li>
+<li>string GetSexagenaryYearString()</li>
+<li>int GetTerrestrialBranch()</li>
+<li>string GetTerrestrialBranchString()</li>
+<li>int GetDaysInYear()</li>
 </ul>
 
 <p><strong>示例</strong></p>
@@ -76,7 +82,13 @@
 <div class="highlight highlight-csharp"><pre>    DateTime datetime = DateTime.Now;
     <span class="pl-k">int</span> woy = datetime.WeekOfYear();
     <span class="pl-k">long</span> timestamp1 = datetime.UnixTimestamp();
-    <span class="pl-k">long</span> timestamp2 = datetime.UnixTimestamp(<span class="pl-k">new</span> DateTime(<span class="pl-c1">2046</span>,<span class="pl-c1">10</span>,<span class="pl-c1">1</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>));</pre></div>
+    <span class="pl-k">long</span> timestamp2 = datetime.UnixTimestamp(<span class="pl-k">new</span> DateTime(<span class="pl-c1">2046</span>,<span class="pl-c1">10</span>,<span class="pl-c1">1</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>));
+    DateTime chinese = datetime.ToChineseCalendar();<span class="pl-c">//2046-9-2</span>
+    <span class="pl-k">int</span> jiazi= dateime.GetSexagenaryYear();<span class="pl-c">//3</span>
+    <span class="pl-k">string</span> jiazistring = dateime.GetSexagenaryYearString();<span class="pl-c">//丙寅</span>
+    <span class="pl-k">int</span> dizhi = dateime.GetTerrestrialBranch();<span class="pl-c">//3</span>
+    <span class="pl-k">string</span> dizhistring = datetime.GetTerrestrialBranchString();<span class="pl-c">//寅</span>
+    <span class="pl-k">int</span> days = datetime.GetDaysInYear();<span class="pl-c">//354</span></pre></div>
 
 <h3>
 <a id="关于mef插件式的扩展" class="anchor" href="#%E5%85%B3%E4%BA%8Emef%E6%8F%92%E4%BB%B6%E5%BC%8F%E7%9A%84%E6%89%A9%E5%B1%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>关于MEF插件式的扩展</h3>
